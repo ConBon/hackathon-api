@@ -1,6 +1,5 @@
 package com.crc;
 
-import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,13 +12,12 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-
 import com.crc.heroku.ConnectionProvider;
 
 /**
  * Root resource (exposed at "product" path)
  */
-@Path("product/{productId}")
+@Path("/products")
 public class Product {
 
 	private static ConnectionProvider connectionProvider = ConnectionProvider.getInstance();
@@ -44,11 +42,11 @@ public class Product {
 			Connection connection = connectionProvider.getConnection();
 			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery("SELECT * FROM products;");
-			/*String results = "";
+			/*String results = "";*/
 			while (rs.next()) {
-				System.out.println("Thing: " + rs.getString("thing"));
-			}*/
-			return rs.getString(2);
+				return rs.getString(1) + ":"+rs.getString(2);
+			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
