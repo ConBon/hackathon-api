@@ -31,7 +31,7 @@ public class Review {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String getReviews() {
-    	if(reviews !=  null) {
+    	if(reviews == null) {
     		reviews = new ArrayList<ReviewBean>();
 	        try {
 				Connection connection = connectionProvider.getConnection();

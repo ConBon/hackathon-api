@@ -35,7 +35,7 @@ public class Product {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String getProducts() {
-    	if(products !=  null) {
+    	if(products ==  null) {
 	     	products = new ArrayList<ProductBean>();
 	        try {
 				Connection connection = connectionProvider.getConnection();
