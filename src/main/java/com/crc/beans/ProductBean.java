@@ -12,13 +12,13 @@ public class ProductBean {
 	private final List<String> colours;
 	
 	public ProductBean(
-		final String bBrandName,
-		final String bProductName,
-		final float bPrice,
-		final List<String> bSizes,
-		final int bRating,
-		final String bImageUrl,
-		final List<String> bColours) {
+			final String bBrandName,
+			final String bProductName,
+			final float bPrice,
+			final List<String> bSizes,
+			final int bRating,
+			final String bImageUrl,
+			final List<String> bColours) {
 		this.brandName = bBrandName;
 		this.productName = bProductName;
 		this.price = bPrice;
