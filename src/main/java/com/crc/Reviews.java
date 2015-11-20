@@ -42,12 +42,12 @@ public class Reviews {
 				while (rs.next()) {
 					
 					Review review = new Review.ReviewBuilder()
+							.reviewId(rs.getInt(1))
 							.title(rs.getString(2))
 							.reviewText(rs.getString(3))
 							.nickname(rs.getString(4))
 							.positiveVotes(rs.getInt(5))
-							.negativeVotes(rs.getInt(6))
-							.productId(rs.getInt(7)).build();
+							.negativeVotes(rs.getInt(6)).build();
 					reviews.add(review);
 				}
 				

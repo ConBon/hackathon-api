@@ -6,7 +6,7 @@ public class Review {
 	private final String nickname;
 	private final int positiveVotes;
 	private final int negativeVotes;
-	private final int productId;
+	private final int reviewId;
 	
 	public Review(
 			final String bTitle,
@@ -20,7 +20,7 @@ public class Review {
 		this.nickname = bNickname;
 		this.positiveVotes = bPositiveVotes;
 		this.negativeVotes = bNegativeVotes;
-		this.productId = bProductId;
+		this.reviewId = bProductId;
 	}
 	
 	public static class ReviewBuilder {
@@ -29,7 +29,7 @@ public class Review {
 		private String bNickname;
 		private int bPositiveVotes;
 		private int bNegativeVotes;
-		private int bProductId;
+		private int bReviewId;
 		
 		public ReviewBuilder title(String title) {
 			this.bTitle = title;
@@ -56,13 +56,13 @@ public class Review {
 			return this;
 		}
 		
-		public ReviewBuilder productId(int productId) {
-			this.bProductId = productId;
+		public ReviewBuilder reviewId(int reviewId) {
+			this.bReviewId = reviewId;
 			return this;
 		}
 		
 		public Review build() {
-			return new Review (bTitle, bReviewText, bNickname, bPositiveVotes, bNegativeVotes, bProductId);
+			return new Review (bTitle, bReviewText, bNickname, bPositiveVotes, bNegativeVotes, bReviewId);
 		}
 		
 	}
@@ -88,7 +88,7 @@ public class Review {
 	}
 
 	public int getProductId() {
-		return productId;
+		return reviewId;
 	}
 	
 }
