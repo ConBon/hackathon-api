@@ -6,15 +6,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConnectionProvider {
-	private static ConnectionProvider instance = null;
+public class ConnectionManager {
+	private static ConnectionManager instance = null;
 	private static Connection connection = null;
 	
-	protected ConnectionProvider(){}
+	protected ConnectionManager(){}
 	
-	public static ConnectionProvider getInstance() {
+	public static ConnectionManager getInstance() {
 		if(instance == null) {
-			instance = new ConnectionProvider();
+			instance = new ConnectionManager();
 			try {
 				connection = instance.initialiseConnection();
 			} catch (URISyntaxException e) {
@@ -49,6 +49,6 @@ public class ConnectionProvider {
 		return connection;
 	}
 	public void setConnection(Connection connection) {
-		this.connection = connection;
+		ConnectionManager.connection = connection;
 	}
 }

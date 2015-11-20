@@ -2,7 +2,8 @@ package com.crc.beans;
 
 import java.util.List;
 
-public class ProductBean {
+public class Product {
+	private final int productId;
 	private final String brandName;
 	private final String productName;
 	private final float price;
@@ -11,7 +12,8 @@ public class ProductBean {
 	private final String imageUrl;
 	private final List<String> colours;
 	
-	public ProductBean(
+	public Product(
+			final int bProductId,
 			final String bBrandName,
 			final String bProductName,
 			final float bPrice,
@@ -19,6 +21,7 @@ public class ProductBean {
 			final int bRating,
 			final String bImageUrl,
 			final List<String> bColours) {
+		this.productId = bProductId;
 		this.brandName = bBrandName;
 		this.productName = bProductName;
 		this.price = bPrice;
@@ -29,6 +32,7 @@ public class ProductBean {
 	}
 
 	public static class ProductBuilder {
+		private int bProductId;
 		private String bBrandName;
 		private String bProductName;
 		private float bPrice;
@@ -38,6 +42,11 @@ public class ProductBean {
 		private List<String> bColours;
 		
 		public ProductBuilder() {}
+		
+		public ProductBuilder productId(int productId) {
+			this.bProductId = productId;
+			return this;
+		}
 		
 		public ProductBuilder brandName(String brandName) {
 			this.bBrandName = brandName;
@@ -70,9 +79,41 @@ public class ProductBean {
 			return this;
 		}
 		
-		public ProductBean build() {
-			return new ProductBean(bBrandName, bProductName, bPrice, 
+		public Product build() {
+			return new Product(bProductId, bBrandName, bProductName, bPrice, 
 					bSizes, bRating, bImageUrl, bColours);
 		}
+	}
+
+	public int getProductId() {
+		return productId;
+	}
+
+	public String getBrandName() {
+		return brandName;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public List<String> getSizes() {
+		return sizes;
+	}
+
+	public int getRating() {
+		return rating;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public List<String> getColours() {
+		return colours;
 	}
 }

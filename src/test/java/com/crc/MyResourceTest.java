@@ -8,13 +8,13 @@ import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-import com.crc.Product;
+import com.crc.Products;
 
 public class MyResourceTest extends JerseyTest {
 
     @Override
     protected Application configure() {
-        return new ResourceConfig(Product.class);
+        return new ResourceConfig(Products.class);
     }
 
     /**

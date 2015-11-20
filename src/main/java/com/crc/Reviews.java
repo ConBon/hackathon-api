@@ -7,19 +7,21 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Singleton;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import com.crc.beans.ReviewBean;
-import com.crc.heroku.ConnectionProvider;
+import com.crc.beans.Review;
+import com.crc.heroku.ConnectionManager;
 import com.google.gson.Gson;
 
 @Path("/reviews")
-public class Review {
-	private static ConnectionProvider connectionProvider = ConnectionProvider.getInstance();
-	private List<ReviewBean> reviews;
+@Singleton
+public class Reviews {
+	private static ConnectionManager connectionManager = ConnectionManager.getInstance();
+	private List<Review> reviews;
 	private Gson gson = new Gson();
 	
 	/**
@@ -32,14 +34,14 @@ public class Review {
     @Produces(MediaType.APPLICATION_JSON)
     public String getReviews() {
     	if(reviews == null) {
-    		reviews = new ArrayList<ReviewBean>();
+    		reviews = new ArrayList<Review>();
 	        try {
-				Connection connection = connectionProvider.getConnection();
+				Connection connection = connectionManager.getConnection();
 				Statement stmt = connection.createStatement();
 				ResultSet rs = stmt.executeQuery("SELECT * FROM reviews;");
 				while (rs.next()) {
 					
-					ReviewBean review = new ReviewBean.ReviewBuilder()
+					Review review = new Review.ReviewBuilder()
 							.title(rs.getString(2))
 							.reviewText(rs.getString(3))
 							.nickname(rs.getString(4))

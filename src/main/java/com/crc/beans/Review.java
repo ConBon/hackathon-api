@@ -1,6 +1,6 @@
 package com.crc.beans;
 
-public class ReviewBean {
+public class Review {
 	private final String title;
 	private final String reviewText;
 	private final String nickname;
@@ -8,7 +8,7 @@ public class ReviewBean {
 	private final int negativeVotes;
 	private final int productId;
 	
-	public ReviewBean(
+	public Review(
 			final String bTitle,
 			final String bReviewText,
 			final String bNickname,
@@ -61,10 +61,34 @@ public class ReviewBean {
 			return this;
 		}
 		
-		public ReviewBean build() {
-			return new ReviewBean (bTitle, bReviewText, bNickname, bPositiveVotes, bNegativeVotes, bProductId);
+		public Review build() {
+			return new Review (bTitle, bReviewText, bNickname, bPositiveVotes, bNegativeVotes, bProductId);
 		}
 		
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public String getReviewText() {
+		return reviewText;
+	}
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public int getPositiveVotes() {
+		return positiveVotes;
+	}
+
+	public int getNegativeVotes() {
+		return negativeVotes;
+	}
+
+	public int getProductId() {
+		return productId;
 	}
 	
 }
