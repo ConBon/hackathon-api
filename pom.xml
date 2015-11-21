@@ -63,7 +63,16 @@
 		    <artifactId>gson</artifactId>
 		    <version>2.4</version>
 		</dependency>
+	
+	    <dependency>
+			<groupId>com.palominolabs.jersey</groupId>
+			<artifactId>jersey-cors-filter</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+
     </dependencies>
+
+    
 
     <build>
         <finalName>hackathon-api</finalName>
