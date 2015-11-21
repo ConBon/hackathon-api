@@ -19,6 +19,9 @@ public class Index {
 		return "CRC Hackathon RESTful API demo.\n"
 				+"@GET /products\n"
 				+"@GET /products/{productId}\n"
-				+"@GET /products/{productId}/reviews";
+				+"@GET /products/{productId}/reviews\n"
+				+"@GET /reviews\n"
+				+"@GET /categories\n"
+				+"@GET /categories/{categoryId}";
 	}
 }

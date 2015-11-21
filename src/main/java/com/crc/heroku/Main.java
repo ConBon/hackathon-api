@@ -46,6 +46,7 @@ public class Main {
         public MyApplication () {
             register(Products.class);
             register(Reviews.class);
+            register(Categories.class);
             register(ConnectionManager.class);
         }
     }
