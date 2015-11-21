@@ -111,7 +111,7 @@ public class Categories {
 		    					products.add(product);
 		    				}
 		    				categoryProducts.put(catName, products);
-		    				return gson.toJson(categoryProducts);
+		    				return gson.toJson(products);
 	    				} else {
 	    					return "No results";
 	    				}
