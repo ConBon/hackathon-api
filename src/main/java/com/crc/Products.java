@@ -26,6 +26,7 @@ import com.google.gson.Gson;
 /**
  * Resource (exposed at "/products" path)
  */
+
 @Path("/products")
 @Singleton
 public class Products {
