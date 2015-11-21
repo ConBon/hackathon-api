@@ -22,6 +22,6 @@ public class Index {
 				+"@GET /products/{productId}/reviews\n"
 				+"@GET /reviews\n"
 				+"@GET /categories\n"
-				+"@GET /categories/{categoryId}";
+				+"@GET /categories/{categoryId}/products";
 	}
 }

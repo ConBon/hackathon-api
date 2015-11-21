@@ -86,7 +86,7 @@ public class Categories {
 	    			try {
 	    				Connection connection = connectionManager.getConnection();
 	    				Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-	    				ResultSet rs = stmt.executeQuery("SELECT c.catname, p.id, p.productname, p.price, p.sizes, p.rating, p.imageurl, "
+	    				ResultSet rs = stmt.executeQuery("SELECT c.catname, p.id, p.brandname, p.productname, p.price, p.sizes, p.rating, p.imageurl, "
 	    						+"p.colours, p.catId FROM products p, categories c where p.catid = c.categoryid and p.catid = '"+categoryId+"';");
 	    				if(rs.next()) {
 	    					//reset cursor to first row after check
