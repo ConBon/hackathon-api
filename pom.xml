@@ -65,9 +65,9 @@
 		</dependency>
 	
 	    <dependency>
-			<groupId>com.palominolabs.jersey</groupId>
-			<artifactId>jersey-cors-filter</artifactId>
-			<version>1.0.2</version>
+		  <groupId>org.apache.cxf</groupId>
+		  <artifactId>cxf-rt-rs-security-cors</artifactId>
+		  <version>2.6.1</version>
 		</dependency>
 
     </dependencies>
