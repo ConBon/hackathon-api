@@ -5,6 +5,7 @@ import org.eclipse.jetty.webapp.WebAppContext;
 import org.glassfish.jersey.server.ResourceConfig;
 
 import com.crc.*;
+import com.crc.rest.model.Scene7Image;
 
 /**
  * This class launches the web application in an embedded Jetty container. This is the entry point to your application. The Java
@@ -46,6 +47,7 @@ public class Main {
         public MyApplication () {
             register(Products.class);
             register(Reviews.class);
+            register(Scene7Image.class);
             register(Categories.class);
             register(ConnectionManager.class);
         }
